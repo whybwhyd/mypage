@@ -1,52 +1,56 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 
 <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <!-- 아래 태그는 모두 남의 거 끌어오는 것임 -->
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous" />
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
         crossorigin="anonymous"></script>
-    <!-- 여기까지 남의 거 태그 -->
-    <title>스파르타코딩클럽 | 부트스트랩 연습하기</title>
+
+    <title>6캔두잇</title>
+
+    <link href="https://fonts.googleapis.com/css2?family=Gothic+A1:wght@500&display=swap" rel="stylesheet" />
+
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Gowun+Dodum&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Merriweather:wght@300&family=Nanum+Myeongjo&display=swap');
 
         * {
-            font-family: 'Gowun Dodum', sans-serif;
+            font-family: 'Merriweather', serif;
+            letter-spacing: 2px;
         }
 
         .mytitle {
-            background-color: green;
-            color: white;
+            width: 100%;
             height: 250px;
+
+            background-color: #ffb677;
+            color: #ffffff;
 
             display: flex;
             flex-direction: column;
             align-items: center;
             justify-content: center;
 
-            background-image: linear-gradient(0deg, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('https://movie-phinf.pstatic.net/20210715_95/1626338192428gTnJl_JPEG/movie_image.jpg');
-            background-position: center;
-            background-size: cover;
+            margin-bottom: 120px;
         }
 
         .mytitle>button {
-            width: 250px;
+            width: 200px;
             height: 50px;
 
             background-color: transparent;
-
-            border: 1px solid white;
             color: white;
 
             border-radius: 50px;
+            border: 1px solid white;
 
-            margin-top: 20px;
+            margin-top: 10px;
         }
 
         .mytitle>button:hover {
@@ -54,120 +58,603 @@
         }
 
         .mycomment {
-            color: gray
+            color: gray;
         }
 
         .mycards {
-            width: 1200px;
-            margin: 20px auto 20px auto
+            margin: 0px auto 120px auto;
+            width: 95%;
+            max-width: 1200px;
+        }
+
+        .stars {
+            color: orange;
         }
 
         .mypost {
-            width: 95%;
-            max-width: 500px;
-            margin: 20px auto 0px auto;
-            padding: 20px;
-            box-shadow: 0px 0px 3px 0px gray;
+            width: 100%;
+            margin: 0px auto;
+            padding-left: 20%;
+            padding-right: 20%;
+            padding-top: 120px;
+            padding-bottom: 120px;
+            background-image: linear-gradient(0deg,
+                    rgba(255, 255, 255, 0.7),
+                    rgba(255, 255, 255, 0.7)),
+                url(https://search.pstatic.net/common/?src=http%3A%2F%2Fblogfiles.naver.net%2FMjAyMTEwMDFfODAg%2FMDAxNjMzMDY0MzcyMjM2.MFx9pLTHePybCV3CN7S1Uc_DrmRUDH17Rd2m3-2ekkog.c8xNoSzUQKvfYecvLlMj4DMfVZURheiLDGETNchC1oQg.JPEG.lovely_227%2FSE-b955970e-8c88-4faf-96f1-b83982f59df6.jpg&type=a340);
+            background-position: center;
+            background-size: cover;
+            margin-bottom: 120px;
         }
 
-     
-
-        .mybtn {
+        .mybtns {
             display: flex;
             flex-direction: row;
             align-items: center;
             justify-content: center;
 
             margin-top: 20px;
-
         }
 
-        .mybtn>button {
-            margin-right: 10px;
+        .mybtns>button {
+            padding-left: 150px;
+            padding-right: 150px;
+            border-radius: 20px;
+        }
+
+        .card-body {
+            text-align: center;
+        }
+
+        .btn-light {
+            background-color: #f8f9fac2;
+        }
+
+        #comment {
+            height: 200px;
+        }
+
+        #cards-box .card-img-top {
+            height: 400px;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+            cursor: pointer;
+        }
+
+        /* 버튼 우하단 고정 
+      (드롭다운으로 버튼 이동하여 주석처리)
+      .right_area .icon {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: calc(100vw * (45 / 1920));
+        height: calc(100vw * (45 / 1920));
+
+        border-radius: 50%;
+        border: solid 2px #eaeaea;
+        background-color: #fff;
+      }
+
+      .right_area {
+        position: absolute;
+        right: 0;
+        bottom: 0;
+        margin: 10px;
+      }
+      */
+
+        /* 버튼 크기 조절 */
+        .btn xs {
+            padding: 0.25rem 0.5rem;
+            font-size: 0.75rem;
+            line-height: 1;
+            border-radius: 0.2rem;
+        }
+
+        /* 댓글창 중앙 하단 고정 
+    (음식 사진마다 글 규격이 달라서 이상해짐 추후 수정 후 주석 제거)
+    .card-body {
+        position: relative;
+    }
+
+    .comment_section {
+        position: absolute;
+        left: 50%;
+        transform: translateX(-50%);
+        bottom: 0;
+        text-align: center;
+    }
+    */
+
+        /* 아래로는 좋아요 버튼 */
+        .icon.heart {
+            left: 0;
+            bottom: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: calc(100vw * (45 / 1920));
+            height: calc(100vw * (45 / 1920));
+        }
+
+        .bottom_left {
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            margin-bottom: 10px;
+            margin-left: 10px;
+        }
+
+        .icon.heart img {
+            width: calc(100vw * (24 / 1920));
+            height: calc(100vw * (24 / 1920));
+        }
+
+        .icon.heart.fas {
+            color: red;
+        }
+
+        .heart {
+            transform-origin: center;
+        }
+
+        .heart.active img {
+            animation: animateHeart 0.3s linear forwards;
+        }
+
+        @keyframes animateHeart {
+            0% {
+                transform: scale(0.2);
+            }
+
+            40% {
+                transform: scale(1.2);
+            }
+
+            100% {
+                transform: scale(1);
+            }
+        }
+
+        /*dropdown 버튼*/
+        #edit_btn {
+            position: absolute;
+            top: 15px;
+            right: 5px;
+            background-image: url(https://i.postimg.cc/CnBLSDWZ/icon1.png);
+            width: 30px;
+            height: 30px;
+            background-position: center;
+            background-size: cover;
+            text-indent: -9999px;
+        }
+
+        #edit_btn.edit_open~div .edit_drop {
+            display: block;
+        }
+
+        .edit_drop {
+            display: none;
+            background-color: white;
+            width: 75px;
+            height: 62px;
+            position: absolute;
+            top: 60px;
+            right: -16px;
+            text-align: center;
+            border: 1px solid #e9e0e0;
+        }
+
+        .edit_drop button {
+            width: 75px;
+        }
+
+        .edit_drop button:hover {
+            background-color: rgb(255, 221, 158);
+        }
+
+        .edit_drop .btn_edit {
+            border-bottom: 1px solid #e9e0e0;
         }
     </style>
+
+    <script>
+        $(document).ready(function () {
+            listing();
+        });
+        //주신 코드에서 버튼만 추가 => 드롭다운 버튼 변경
+        function listing() {
+            fetch('/food')
+                .then((res) => res.json())
+                .then((data) => {
+                    let rows = data['result'];
+                    $('#cards-box').empty();
+
+                    let n = 0;
+
+                    rows.forEach((a) => {
+                        let title = a['title'];
+                        let url = a['url'];
+                        let star = a['star'];
+                        let comment = a['comment'];
+                        let comments = a['comments'];
+
+                        let star_repeat = '♥'.repeat(star);
+
+                        n++;
+
+                        let temp_html = `<div class="col">
+                              <div class="card h-100">
+                                <img src="${url}"
+                                  class="card-img-top">
+                                  <a id="edit_btn" class="edit_button" role="button" onclick="open_edit('${title}+${n - 1}')">x</a>
+                                  <div id="toggleEdit" class="right_area">
+                                    <div class="edit_drop">
+                                      <button onclick="edit_post_by_title('${title}')" class="edit btn btn-sm btn_edit">Edit</button>
+                                      <button onclick="delete_post_by_title('${title}')" type="button" class="btn btn-sm btn_delete">Delete</button>
+                                    </div>
+                                  </div>
+                                  <div class="card-body">
+                                    <h5 class="card-title">${title}</h5>
+                                    <p class="mycomment">${comment}</p>
+                                    <p class="stars">${star_repeat}</p>
+                                    <p>${comments}</p>
+                                    <div class="bottom_left">
+                                      <a href="javascript:;" class="icon active heart">
+                                        <img src="https://cdn-icons-png.flaticon.com/512/812/812327.png" alt="좋아요">
+                                      </a>
+                                    </div>
+                                    <div class="comment_section">
+                                      <textarea class="form-control" rows="2" placeholder="댓글을 입력해주세요."></textarea>
+                                      <button onclick="add_comment('${title}')" class="btn btn-primary btn-sm mt-2">댓글 작성</button>
+                                    </div>
+                                  </div>
+                              </div>`;
+
+                        $('#cards-box').append(temp_html);
+                    });
+
+                    //하트 클릭 이벤트
+                    $('#cards-box').on('click', '.icon.heart', function () {
+                        $(this).toggleClass('active');
+                        if ($(this).hasClass('active')) {
+                            $(this).find('img').attr({
+                                src: 'https://cdn-icons-png.flaticon.com/512/803/803087.png',
+                                alt: '빈 하트',
+                            });
+                            // 서버에 버튼 클릭 상태 업데이트 요청 보내는 함수
+                            sendButtonStatus($(this).closest('.card').find('.card-title').text(), true);
+                        } else {
+                            $(this).find('i').removeClass('fas').addClass('far');
+                            $(this).find('img').attr({
+                                src: 'https://cdn-icons-png.flaticon.com/512/812/812327.png',
+                                alt: '꽉 찬 하트',
+                                
+                            });
+                            sendButtonStatus($(this).closest('.card').find('.card-title').text(), false);
+                        }
+                    });
+                });
+        }
+
+        //웹에서 포스팅 부분(쓰기)
+        function posting() {
+            let title = $('#title').val();
+            let url = $('#url').val();
+            let comment = $('#comment').val();
+            let star = $('#star').val();
+
+            let formData = new FormData();
+            formData.append('title_give', title);
+            formData.append('url_give', url);
+            formData.append('comment_give', comment);
+            formData.append('star_give', star);
+
+            fetch('/food', { method: 'POST', body: formData })
+                .then((res) => res.json())
+                .then((data) => {
+                    alert(data['msg']);
+                    window.location.reload();
+                });
+        }
+
+        //버튼 클릭시 경고 메시지 출력 후 삭제
+        function delete_post_by_title(title) {
+            if (confirm('삭제하시겠습니까?')) {
+                let formData = new FormData();
+                formData.append('title_give', title);
+
+                fetch('/food/delete', { method: 'POST', body: formData })
+                    .then((res) => res.json())
+                    .then((data) => {
+                        alert(data['msg']);
+                        window.location.reload();
+                    });
+            }
+        }
+
+        //글 수정하기
+
+        //수정 창 폼으로 제공
+        $(document).on('click', '.edit', function () {
+            let card = $(this).closest('.card');
+            let title = card.find('.card-title').text();
+            let url = card.find('.card-img-top').attr('src'); //이전 코드 text();
+            let star = card.find('.stars').text();
+            let comment = card.find('.mycomment').text();
+
+            let form_html = `
+          <form class="edit-form">
+              <div class="mb-3">
+                  <label for="edit-title" class="form-label">Title</label>
+                  <input type="text" class="form-control" id="edit-title" value="${title}">
+              </div>
+              <div class="mb-3">
+                  <label for="edit-url" class="form-label">URL</label>
+                  <input type="text" class="form-control" id="edit-url" value="${url}">
+              </div>
+              <div class="mb-3">
+                  <label for="edit-star" class="form-label">Star</label>
+                  <input type="text" class="form-control" id="edit-star" value="${star}">
+              </div>
+              <div class="mb-3">
+                  <label for="edit-comment" class="form-label">Comment</label>
+                  <textarea class="form-control" id="edit-comment" rows="3">${comment}</textarea>
+              </div>
+              <button type="submit" class="btn btn-primary">Save changes</button>
+              <button type="button" class="btn btn-secondary cancel-edit">Cancel</button>
+          </form>
+          `;
+            card.find('.card-body').html(form_html);
+        });
+
+        $(document).on('submit', '.edit-form', function (event) {
+            event.preventDefault();
+
+            let card = $(this).closest('.card');
+            let title = card.find('#edit-title').val();
+            let url = card.find('#edit-url').val();
+            let star = card.find('#edit-star').val();
+            let comment = card.find('#edit-comment').val();
+
+            let editFormData = new FormData();
+            editFormData.append('title_give', title);
+            editFormData.append('edit_title_give', title);
+            editFormData.append('edit_url_give', url);
+            editFormData.append('edit_comment_give', comment);
+            editFormData.append('edit_star_give', star);
+
+            fetch('/food/edit_post', { method: 'POST', body: editFormData })
+                .then((res) => res.json())
+                .then((data) => {
+                    alert(data['msg']);
+                    window.location.reload();
+                });
+        });
+
+        //주신 코드에서 드롭다운 버튼 변경
+        $(document).on('click', '.cancel-edit', function () {
+            let card = $(this).closest('.card');
+            let title = card.find('.edit-form #edit-title').val();
+            let url = card.find('.edit-form #edit-url').val();
+            let star = card.find('.edit-form #edit-star').val();
+            let comment = card.find('.edit-form #edit-comment').val();
+
+            let card_html = `
+                      <img src="${url}" class="card-img-top">
+                      <a id="edit_btn" class="edit_button" role="button" onclick="open_edit_cancel('${title}')">x</a>
+                      <div id="toggleEdit" class="right_area">
+                          <div class="edit_drop">
+                            <button onclick="edit_post_by_title('${title}')" class="edit btn btn-sm btn_edit">Edit</button>
+                            <button onclick="delete_post_by_title('${title}')" type="button" class="btn btn-sm btn_delete">Delete</button>
+                          </div>
+                      </div>
+                      <div class="card-body">
+                          <h5 class="card-title">${title}</h5>
+                          <p class="mycomment">${comment}</p>
+                          <p class="stars">${star}</p>
+                          <div class="bottom_left">
+                              <a href="javascript:;" class="icon active heart">
+                                  <img src="https://cdn-icons-png.flaticon.com/512/812/812327.png" alt="좋아요">
+                              </a>
+                          </div>
+                          <div class="comment_section">
+                              <textarea class="form-control" rows="2" placeholder="댓글을 입력해주세요."></textarea>
+                              <button onclick="add_comment('${title}')" class="btn btn-primary btn
+                              mt-2">댓글 작성</button>
+                          </div>
+                      </div>
+                  </div>
+      `;
+            card.html(card_html);
+        });
+
+        function add_comment(title) {
+            let comment = $('#comment-input-' + title).val();
+
+            let commentFormData = new FormData();
+            commentFormData.append('title_give', title);
+            commentFormData.append('comment_give', comment);
+
+            fetch('/food/add_comment', { method: 'POST', body: commentFormData })
+                .then((res) => res.json())
+                .then((data) => {
+                    alert(data['msg']);
+                    
+                    updateCardComments(title);
+
+                    window.location.reload();
+                });
+        }
+
+        function updateCardComments(title) {
+            let commentContainer = $('#comment-section-' + title);
+
+            fetch('/food/comments', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ 'title_give': title })
+            })
+                .then((res) => res.json())
+                .then((data) => {
+                    let comments = data['result'];
+                    let commentsHtml = '';
+
+                    comments.forEach((comment) => {
+                        commentsHtml += `<p>${comment}</p>`;
+                    });
+
+                    // 코멘트 컨테이너의 HTML을 업데이트
+                    commentContainer.html(commentsHtml);
+
+                });
+        }
+
+        //드롭다운 버튼
+        function open_edit(title) {
+            let str = title.split('+')
+            let str_end = str[1]
+            let el = document.getElementsByClassName('edit_button')[str_end];
+            $(el).toggleClass('edit_open');
+        }
+
+        //Edit Cancel시 드롭다운 버튼(해당 div만 드롭다운 되도록 수정중)
+        function open_edit_cancel(title) {
+            let el = document.getElementsByClassName('edit_button');
+            $(el).toggleClass('edit_open');
+        }
+
+         // 버튼 클릭 상태 업데이트 요청을 서버에 전송하는 함수
+         function sendButtonStatus(title, clicked) {
+            const data = {
+                title: title,
+                clicked: clicked,
+            };
+
+            fetch('/food/like', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify(data),
+            })
+                .then((res) => res.json())
+                .then((data) => {
+                    console.log(data);
+                })
+                .catch((error) => {
+                    console.error('Error:', error);
+                });
+        }
+
+    </script>
 </head>
 
 <body>
     <div class="mytitle">
-        <h1> 내 생애 최고의 영화들!</h1>
-        <button>영화 기록하기</button>
+        <h1>VISITING GOOD RESTAURANTS</h1>
     </div>
-    <div class="mypost">
+
+    <div class="mypost" id="post-box">
+        <p class="mb-0">TITLE</p>
         <div class="form-floating mb-3">
-            <input type="email" class="form-control" id="floatingInput" placeholder="name@example.com">
-            <label for="floatingInput">영화URL</label>
+            <input id="title" type="text" class="form-control" placeholder="title" />
         </div>
-
+        <p class="mb-0">IMAGE URL</p>
+        <div class="form-floating mb-3">
+            <input id="url" type="text" class="form-control" placeholder="url" />
+        </div>
         <div class="input-group mb-3">
-
-            <label class="input-group-text" for="inputGroupSelect01">별점</label>
-            <select class="form-select" id="inputGroupSelect01">
-                <option selected>--선택하기--</option>
-                <option value="1">⭐</option>
-                <option value="2">⭐⭐</option>
-                <option value="3">⭐⭐⭐</option>
-                <option value="4">⭐⭐⭐⭐</option>
-                <option value="5">⭐⭐⭐⭐⭐</option>
+            <label class="input-group-text" for="inputGroupSelect01"
+                style="background-color: orange; color: white">HEART</label>
+            <select class="form-select" id="star">
+                <option value="1">♥</option>
+                <option value="2">♥♥</option>
+                <option value="3">♥♥♥</option>
+                <option value="4">♥♥♥♥</option>
+                <option selected value="5">♥♥♥♥♥</option>
             </select>
         </div>
-
+        <p class="mb-0">COMMENT</p>
         <div class="form-floating">
-            <textarea class="form-control" placeholder="Leave a comment here" id="floatingTextarea"></textarea>
-            <label for="floatingTextarea">코멘트</label>
+            <textarea id="comment" class="form-control" placeholder="Leave a comment here"></textarea>
         </div>
-    <div class="mybtn">
-            <button type="button" class="btn btn-dark">기록하기</button>
-            <button type="button" class="btn btn-outline-dark">닫기</button>
+        <div class="mybtns">
+            <button onclick="posting()" type="button" class="btn btn-light">
+                SAVE
+            </button>
         </div>
     </div>
+
     <div class="mycards">
-        <div class="row row-cols-1 row-cols-md-4 g-4">
+        <div class="row row-cols-1 row-cols-md-3 g-3" id="cards-box">
             <div class="col">
-                <div class="card">
-                    <img src="https://movie-phinf.pstatic.net/20210728_221/1627440327667GyoYj_JPEG/movie_image.jpg"
-                        class="card-img-top" alt="...">
+                <div class="card h-100">
+                    <img src="https://search.pstatic.net/common/?src=http%3A%2F%2Fblogfiles.naver.net%2FMjAyMTEwMDFfODAg%2FMDAxNjMzMDY0MzcyMjM2.MFx9pLTHePybCV3CN7S1Uc_DrmRUDH17Rd2m3-2ekkog.c8xNoSzUQKvfYecvLlMj4DMfVZURheiLDGETNchC1oQg.JPEG.lovely_227%2FSE-b955970e-8c88-4faf-96f1-b83982f59df6.jpg&type=a340"
+                        class="card-img-top" />
                     <div class="card-body">
-                        <h5 class="card-title">영화 제목이 들어갑니다.</h5>
-                        <p class="card-text">여기에 코멘트가 들어갑니다.</p>
-                        <p>⭐⭐⭐</p>
-                        <p class="mycomment">여기에 나의 의견을 쓰면 되겠죠.</p>
+                        <h5 class="card-title">가게 이름</h5>
+                        <p class="mycomment">나의 한줄 평을 씁니다</p>
+                        <p class="stars">♥♥♥♥♥</p>
+    
                     </div>
                 </div>
             </div>
             <div class="col">
-                <div class="card">
-                    <img src="https://movie-phinf.pstatic.net/20210728_221/1627440327667GyoYj_JPEG/movie_image.jpg"
-                        class="card-img-top" alt="...">
+                <div class="card h-100">
+                    <img src="https://search.pstatic.net/common/?src=http%3A%2F%2Fblogfiles.naver.net%2FMjAyMTEwMDFfODAg%2FMDAxNjMzMDY0MzcyMjM2.MFx9pLTHePybCV3CN7S1Uc_DrmRUDH17Rd2m3-2ekkog.c8xNoSzUQKvfYecvLlMj4DMfVZURheiLDGETNchC1oQg.JPEG.lovely_227%2FSE-b955970e-8c88-4faf-96f1-b83982f59df6.jpg&type=a340"
+                        class="card-img-top" />
                     <div class="card-body">
-                        <h5 class="card-title">영화 제목이 들어갑니다.</h5>
-                        <p class="card-text">여기에 코멘트가 들어갑니다.</p>
-                        <p>⭐⭐⭐</p>
-                        <p class="mycomment">여기에 나의 의견을 쓰면 되겠죠.</p>
+                        <h5 class="card-title">가게 이름</h5>
+                        <p class="mycomment">나의 한줄 평을 씁니다</p>
+                        <p class="stars">♥♥♥♥♥</p>
                     </div>
                 </div>
             </div>
             <div class="col">
-                <div class="card">
-                    <img src="https://movie-phinf.pstatic.net/20210728_221/1627440327667GyoYj_JPEG/movie_image.jpg"
-                        class="card-img-top" alt="...">
+                <div class="card h-100">
+                    <img src="https://search.pstatic.net/common/?src=http%3A%2F%2Fblogfiles.naver.net%2FMjAyMTEwMDFfODAg%2FMDAxNjMzMDY0MzcyMjM2.MFx9pLTHePybCV3CN7S1Uc_DrmRUDH17Rd2m3-2ekkog.c8xNoSzUQKvfYecvLlMj4DMfVZURheiLDGETNchC1oQg.JPEG.lovely_227%2FSE-b955970e-8c88-4faf-96f1-b83982f59df6.jpg&type=a340"
+                        class="card-img-top" />
                     <div class="card-body">
-                        <h5 class="card-title">영화 제목이 들어갑니다.</h5>
-                        <p class="card-text">여기에 코멘트가 들어갑니다.</p>
-                        <p>⭐⭐⭐</p>
-                        <p class="mycomment">여기에 나의 의견을 쓰면 되겠죠.</p>
+                        <h5 class="card-title">가게 이름</h5>
+                        <p class="mycomment">나의 한줄 평을 씁니다</p>
+                        <p class="stars">♥♥♥♥♥</p>
                     </div>
                 </div>
             </div>
             <div class="col">
-                <div class="card">
-                    <img src="https://movie-phinf.pstatic.net/20210728_221/1627440327667GyoYj_JPEG/movie_image.jpg"
-                        class="card-img-top" alt="...">
+                <div class="card h-100">
+                    <img src="https://search.pstatic.net/common/?src=http%3A%2F%2Fblogfiles.naver.net%2FMjAyMTEwMDFfODAg%2FMDAxNjMzMDY0MzcyMjM2.MFx9pLTHePybCV3CN7S1Uc_DrmRUDH17Rd2m3-2ekkog.c8xNoSzUQKvfYecvLlMj4DMfVZURheiLDGETNchC1oQg.JPEG.lovely_227%2FSE-b955970e-8c88-4faf-96f1-b83982f59df6.jpg&type=a340"
+                        class="card-img-top" />
                     <div class="card-body">
-                        <h5 class="card-title">영화 제목이 들어갑니다.</h5>
-                        <p class="card-text">여기에 코멘트가 들어갑니다.</p>
-                        <p>⭐⭐⭐</p>
-                        <p class="mycomment">여기에 나의 의견을 쓰면 되겠죠.</p>
+                        <h5 class="card-title">가게 이름</h5>
+                        <p class="mycomment">나의 한줄 평을 씁니다</p>
+                        <p class="stars">♥♥♥♥♥</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="card h-100">
+                    <img src="https://search.pstatic.net/common/?src=http%3A%2F%2Fblogfiles.naver.net%2FMjAyMTEwMDFfODAg%2FMDAxNjMzMDY0MzcyMjM2.MFx9pLTHePybCV3CN7S1Uc_DrmRUDH17Rd2m3-2ekkog.c8xNoSzUQKvfYecvLlMj4DMfVZURheiLDGETNchC1oQg.JPEG.lovely_227%2FSE-b955970e-8c88-4faf-96f1-b83982f59df6.jpg&type=a340"
+                        class="card-img-top" />
+                    <div class="card-body">
+                        <h5 class="card-title">가게 이름</h5>
+                        <p class="mycomment">나의 한줄 평을 씁니다</p>
+                        <p class="stars">♥♥♥♥♥</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="card h-100">
+                    <img src="https://search.pstatic.net/common/?src=http%3A%2F%2Fblogfiles.naver.net%2FMjAyMTEwMDFfODAg%2FMDAxNjMzMDY0MzcyMjM2.MFx9pLTHePybCV3CN7S1Uc_DrmRUDH17Rd2m3-2ekkog.c8xNoSzUQKvfYecvLlMj4DMfVZURheiLDGETNchC1oQg.JPEG.lovely_227%2FSE-b955970e-8c88-4faf-96f1-b83982f59df6.jpg&type=a340"
+                        class="card-img-top" />
+                    <div class="card-body">
+                        <h5 class="card-title">가게 이름</h5>
+                        <p class="mycomment">나의 한줄 평을 씁니다</p>
+                        <p class="stars">♥♥♥♥♥</p>
                     </div>
                 </div>
             </div>
